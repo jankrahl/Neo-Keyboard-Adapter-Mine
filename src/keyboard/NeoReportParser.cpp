@@ -2,28 +2,28 @@
 
 const uint8_t NeoReportParser::neoMap[] = {
   //KEY_RESERVED		KEY_ERROR_ROLLOVER	KEY_POST_FAIL		KEY_ERROR_UNDEFINED	KEY_A				KEY_B				KEY_C				KEY_D
-	KEY_RESERVED,		KEY_ERROR_ROLLOVER,	KEY_POST_FAIL,		KEY_ERROR_UNDEFINED,KEY_U,				KEY_Y,				KEY_QUOTE,			KEY_A,
+	KEY_RESERVED,		KEY_ERROR_ROLLOVER,	KEY_POST_FAIL,		KEY_ERROR_UNDEFINED,KEY_C,				KEY_SEMICOLON,				KEY_LEFT_BRACE,			KEY_I,
 	
   //KEY_E				KEY_F				KEY_G				KEY_H				KEY_I				KEY_J				KEY_K				KEY_L
-	KEY_L,				KEY_E,				KEY_O,				KEY_S,				KEY_G,				KEY_N,				KEY_R,				KEY_T,
+	KEY_U,				KEY_E,				KEY_O,				KEY_M,				KEY_D,				KEY_N,				KEY_T,				KEY_S,
 	
   //KEY_M				KEY_N				KEY_O				KEY_P				KEY_Q				KEY_R				KEY_S				KEY_T
-	KEY_M,				KEY_B,				KEY_F,				KEY_Q,				KEY_X,				KEY_C,				KEY_I,				KEY_W,
+	KEY_F,				KEY_P,				KEY_G,				KEY_Z,				KEY_J,				KEY_A,				KEY_R,				KEY_Q,
 	
   //KEY_U				KEY_V				KEY_W				KEY_X				KEY_Y				KEY_Z				KEY_1				KEY_2
-	KEY_H,				KEY_P,				KEY_V,				KEY_SEMICOLON,		KEY_K,				KEY_LEFT_BRACE,		KEY_1,				KEY_2,
+	KEY_B,				KEY_QUOTE,		KEY_L,				KEY_X,				KEY_W,				KEY_V,				KEY_1,				KEY_2,
 	
   //KEY_3				KEY_4				KEY_5				KEY_6				KEY_7				KEY_8				KEY_9				KEY_0
 	KEY_3,				KEY_4,				KEY_5,				KEY_6,				KEY_7,				KEY_8,				KEY_9,				KEY_0,
 	
   //KEY_ENTER			KEY_ESC				KEY_BACKSPACE		KEY_TAB				KEY_SPACE			KEY_MINUS			KEY_EQUAL			KEY_LEFT_BRACE
-	KEY_ENTER,			KEY_ESC,			KEY_BACKSPACE,		KEY_TAB,			KEY_SPACE,			KEY_SLASH,			KEY_RIGHT_BRACE,	KEY_MINUS,
+	KEY_ENTER,			KEY_ESC,			KEY_BACKSPACE,		KEY_TAB,			KEY_SPACE,			KEY_SLASH,			KEY_RIGHT_BRACE,	KEY_Y,
 	
   //KEY_RIGHT_BRACE		KEY_BACKSLASH		KEY_NON_US_NUM		KEY_SEMICOLON		KEY_QUOTE			KEY_TILDE			KEY_COMMA			KEY_PERIOD
-	KEY_EQUAL,			KEY_BACKSLASH,		KEY_NON_US_NUM,		KEY_D,				KEY_Z,				KEY_TILDE,			KEY_COMMA,			KEY_PERIOD,
+	KEY_MINUS,					KEY_BACKSLASH,		KEY_EQUAL,		    KEY_H,					KEY_NON_US_NUM,			KEY_TILDE,			KEY_COMMA,			KEY_PERIOD,
 	
   //KEY_SLASH			KEY_CAPS_LOCK		KEY_F1				KEY_F2				KEY_F3				KEY_F4				KEY_F5				KEY_F6
-	KEY_J,				KEY_CAPS_LOCK,		KEY_F1,				KEY_F2,				KEY_F3,				KEY_F4,				KEY_F5,				KEY_F6,
+	KEY_K,					KEY_CAPS_LOCK,		KEY_F1,				KEY_F2,				KEY_F3,				KEY_F4,				KEY_F5,				KEY_F6,
 	
   //KEY_F7				KEY_F8				KEY_F9				KEY_F10				KEY_F11				KEY_F12				KEY_PRINT			KEY_SCROLL_LOCK
 	KEY_F7,				KEY_F8,				KEY_F9,				KEY_F10,			KEY_F11,			KEY_F12,			KEY_PRINTSCREEN,	KEY_SCROLL_LOCK,
@@ -55,10 +55,10 @@ const InputSequence NeoReportParser::neoMapL2[] PROGMEM = {
 	{0, 0},							{0, 0},							{0, 0},							{KEY_UNICODE, 0x2014},
 
   //KEY_EQUAL						KEY_LEFT_BRACE					KEY_RIGHT_BRACE					KEY_BACKSLASH
-	{KEY_UNICODE, 0xB8},			{KEY_UNICODE, 0x1E9E},			{KEY_UNICODE, 0x2DC},			{0, 0},
+	{KEY_UNICODE, 0xB8},			{KEY_LEFT_SHIFT, KEY_Y},			{KEY_UNICODE, 0x1E9E},			{0, 0},
 	
   //KEY_NON_US_NUM					KEY_SEMICOLON					KEY_QUOTE						KEY_TILDE
-	{0, 0},							{0, 0},							{0, 0},							{KEY_UNICODE, 0x2C7},
+	{KEY_UNICODE, 0x2DC},			{0, 0},								{0, KEY_NON_US_NUM},						{KEY_UNICODE, 0x2C7},
 	
   //KEY_COMMA						KEY_PERIOD						KEY_SLASH						KEY_CAPS_LOCK
 	{KEY_UNICODE, 0x2013},			{KEY_UNICODE, 0x2022},			{0, 0},							{0, 0}, 
@@ -132,13 +132,13 @@ const InputSequence NeoReportParser::neoMapL3[] PROGMEM = {
 	{KEY_RESERVED, KEY_ENTER},		{KEY_RESERVED, KEY_ESC},		{KEY_RESERVED, KEY_BACKSPACE},	{KEY_UNICODE, 0x266B},
 		
   //KEY_SPACE						KEY_MINUS						KEY_EQUAL						KEY_LEFT_BRACE
-	{KEY_RESERVED, KEY_SPACE},		{KEY_UNICODE, 0x2014},			{KEY_UNICODE, 0x2DA},			{KEY_UNICODE, 0x17F},
+	{KEY_RESERVED, KEY_SPACE},		{KEY_UNICODE, 0x2014},			{KEY_UNICODE, 0x2DA},			{KEY_RIGHT_ALT, KEY_Q},
 		
   //KEY_RIGHT_BRACE					KEY_BACKSLASH					KEY_NON_US_NUM					KEY_SEMICOLON
-	{KEY_UNICODE, 0x2011},			{0, 0},							{0, 0},							{KEY_LEFT_SHIFT, KEY_PERIOD},
+	{KEY_UNICODE, 0x17F},				{0, 0},								{KEY_UNICODE, 0x2011},					{KEY_LEFT_SHIFT, KEY_PERIOD},
 		
   //KEY_QUOTE						KEY_TILDE						KEY_COMMA						KEY_PERIOD
-	{KEY_RIGHT_ALT, KEY_Q},			{KEY_UNICODE, 0x21BB},			{KEY_LEFT_SHIFT, KEY_2},		{KEY_LEFT_SHIFT, KEY_NON_US_NUM},
+	{0, KEY_NON_US_NUM},				{KEY_UNICODE, 0x21BB},			{KEY_LEFT_SHIFT, KEY_2},		{KEY_LEFT_SHIFT, KEY_NON_US_NUM},
 
   //KEY_SLASH						KEY_CAPS_LOCK					KEY_F1							KEY_F2
 	{KEY_LEFT_SHIFT, KEY_COMMA},	{0, 0},							{KEY_RESERVED, KEY_F1},			{KEY_RESERVED, KEY_F2},
@@ -212,13 +212,13 @@ const InputSequence NeoReportParser::neoMapL4[] PROGMEM = {
 	{KEY_RESERVED, KEYPAD_0},		{KEY_RESERVED, KEYPAD_SUBTRACT},{KEY_UNICODE, 0xA8},			{KEY_UNICODE, 0x2212},
 		
   //KEY_RIGHT_BRACE					KEY_BACKSLASH					KEY_NON_US_NUM					KEY_SEMICOLON
-	{KEY_UNICODE, 0x2DD},			{0, 0},							{0, 0},							{KEY_RESERVED, KEY_COMMA},
+	{KEY_LEFT_SHIFT, KEY_COMMA},			{0, 0},							 {KEY_UNICODE, 0x2DD},							{KEY_RESERVED, KEY_COMMA},
 		
   //KEY_QUOTE						KEY_TILDE						KEY_COMMA						KEY_PERIOD
-	{KEY_RESERVED, KEY_PERIOD},		{KEY_UNICODE, 0x2D9},			{KEY_RESERVED, KEYPAD_2},		{KEY_RESERVED, KEYPAD_3},
+	{0, KEY_NON_US_NUM},		{KEY_UNICODE, 0x2D9},			{KEY_RESERVED, KEYPAD_2},		{KEY_RESERVED, KEYPAD_3},
 
   //KEY_SLASH						KEY_CAPS_LOCK					KEY_F1							KEY_F2
-	{KEY_LEFT_SHIFT, KEY_COMMA},	{0, 0},							{KEY_RESERVED, KEY_F1},			{KEY_RESERVED, KEY_F2},
+	{KEY_RESERVED, KEY_PERIOD},	{0, 0},							{KEY_RESERVED, KEY_F1},			{KEY_RESERVED, KEY_F2},
 		
   //KEY_F3							KEY_F4							KEY_F5							KEY_F6
 	{KEY_RESERVED, KEY_F3},			{KEY_RESERVED, KEY_F4},			{KEY_RESERVED, KEY_F5},			{KEY_RESERVED, KEY_F6},
@@ -253,28 +253,28 @@ const InputSequence NeoReportParser::neoMapL4[] PROGMEM = {
 
 const uint16_t NeoReportParser::neoMapL5[] PROGMEM = {
   //KEY_RESERVED		KEY_ERROR_ROLLOVER	KEY_POST_FAIL		KEY_ERROR_UNDEFINED	KEY_A				KEY_B				KEY_C				KEY_D
-	0,					0,					0,					0,					0,					0x3B6,				0x3B7,				0x3B1,
+	0,					0,					0,					0,					0x3C7,				0x3F5,				0,				0x3B9,
 	
   //KEY_E				KEY_F				KEY_G				KEY_H				KEY_I				KEY_J				KEY_K				KEY_L
-	0x3BB,				0x3B5,				0x3BF,				0x3C3,				0x3B3,				0x3BD,				0x3C1,				0x3C4,
+	0,				0x3B5,				0x3BF,				0xB5,				0x3B4,				0x3BD,				0x3C4,				0x3C3,
 	
   //KEY_M				KEY_N				KEY_O				KEY_P				KEY_Q				KEY_R				KEY_S				KEY_T
-	0xB5,				0x3B2,				0x3C6,				0x3D5,				0x3BE,				0x3C7,				0x3B9,				0x3C9,
+	0x3C6,				0x3C0,				0x3B3,				0x3C5,				0x3B8,				0x3B1,				0x3C1,				0x3D5,
 	
   //KEY_U				KEY_V				KEY_W				KEY_X				KEY_Y				KEY_Z				KEY_1				KEY_2
-	0x3C8,				0x3C0,				0,					0x3F5,				0x3BA,				0,					0x2081,				0x2082,
+	0x3B2,				0x3B7,				0x3BB,					0x3BE,				0x3C9,				0,					0x2081,				0x2082,
 	
   //KEY_3				KEY_4				KEY_5				KEY_6				KEY_7				KEY_8				KEY_9				KEY_0
 	0x2083,				0x2640,				0x2642,				0x26A5,				0x3F0,				0x27E8,				0x27E9,				0x2080,
 	
   //KEY_ENTER			KEY_ESC				KEY_BACKSPACE		KEY_TAB				KEY_SPACE			KEY_MINUS			KEY_EQUAL			KEY_LEFT_BRACE
-	0,					0,					0,					0,					0xA0,				0x2011,				0x1FFE,				0x3C2,
+	0,					0,					0,					0,					0xA0,				0x2011,				0x1FFE,				0x3B6,
 	
   //KEY_RIGHT_BRACE		KEY_BACKSLASH		KEY_NON_US_NUM		KEY_SEMICOLON		KEY_QUOTE			KEY_TILDE			KEY_COMMA			KEY_PERIOD
-	0x1FBF,				0,					0,					0x3B4,				0x3C5,				0x2DE,				0x3F1,				0x3D1,
+	0x3C2,				0,					0x1FBF,					0x3C8,				0,				0x2DE,				0x3F1,				0x3D1,
 	
   //KEY_SLASH			KEY_CAPS_LOCK		KEY_F1				KEY_F2				KEY_F3				KEY_F4				KEY_F5				KEY_F6
-	0x3B8,				0,					0,					0,					0,					0,					0,					0,
+	0x3BA,				0,					0,					0,					0,					0,					0,					0,
 	
   //KEY_F7				KEY_F8				KEY_F9				KEY_F10				KEY_F11				KEY_F12				KEY_PRINT			KEY_SCROLL_LOCK
 	0,					0,					0,					0,					0,					0,					0,					0,
@@ -294,28 +294,28 @@ const uint16_t NeoReportParser::neoMapL5[] PROGMEM = {
 
 const uint16_t NeoReportParser::neoMapL6[] PROGMEM = {
   //KEY_RESERVED		KEY_ERROR_ROLLOVER	KEY_POST_FAIL		KEY_ERROR_UNDEFINED	KEY_A				KEY_B				KEY_C				KEY_D
-	0,					0,					0,					0,					0x2282,				0x2124,				0x2135,				0x2200,
+	0,					0,					0,					0,					0x2102,				0x2229,				0x222A,				0x222B,
 	
   //KEY_E				KEY_F				KEY_G				KEY_H				KEY_I				KEY_J				KEY_K				KEY_L
-	0x39B,				0x2203,				0x2208,				0x3A3,				0x393,				0x2115,				0x211D,				0x2202,
+	0x2282,				0x2203,				0x2208,				0x21D4,				0x394,				0x2115,				0x2202,				0x3A3,
 	
   //KEY_M				KEY_N				KEY_O				KEY_P				KEY_Q				KEY_R				KEY_S				KEY_T
-	0x21D4,				0x21D0,				0x3A6,				0x211A,				0x39E,				0x2102,				0x222B,				0x3A9,
+	0x3A6,				0x3A0,				0x393,				0x2207,				0x3B8,				0x2200,				0x211D,				0x211A,
 	
   //KEY_U				KEY_V				KEY_W				KEY_X				KEY_Y				KEY_Z				KEY_1				KEY_2
-	0x3A8,				0x3A0,				0x221A,				0x2229,				0x00D7,				0x222A,				0xAC,				0x2228,
+	0x21D0,				0x2135,				0x39B,				0x39E,				0x3A9,				0x221A,				0xAC,				0x2228,
 	
   //KEY_3				KEY_4				KEY_5				KEY_6				KEY_7				KEY_8				KEY_9				KEY_0
 	0x2227,				0x22A5,				0x2221,				0x2225,				0x2192,				0x221E,				0x221D,				0x2205,
 	
   //KEY_ENTER			KEY_ESC				KEY_BACKSPACE		KEY_TAB				KEY_SPACE			KEY_MINUS			KEY_EQUAL			KEY_LEFT_BRACE
-	0,					0,					0,					0,					0x202F,				0xAD,				0xAF,				0x2218,
+	0,					0,					0,					0,					0x202F,				0xAD,				0xAF,				0x2124,
 	
   //KEY_RIGHT_BRACE		KEY_BACKSLASH		KEY_NON_US_NUM		KEY_SEMICOLON		KEY_QUOTE			KEY_TILDE			KEY_COMMA			KEY_PERIOD
-	0x2D8,				0,					0,					0x394,				0x2207,				0x2E,				0x21D2,				0x21A6,
+	0x2218,				0,					0x2D8,					0x3A8,				0,				0x2E,				0x21D2,				0x21A6,
 	
   //KEY_SLASH			KEY_CAPS_LOCK		KEY_F1				KEY_F2				KEY_F3				KEY_F4				KEY_F5				KEY_F6
-  0x3B8,				0,					0,					0,					0,					0,					0,					0,
+  0x00D7,				0,					0,					0,					0,					0,					0,					0,
   
   //KEY_F7				KEY_F8				KEY_F9				KEY_F10				KEY_F11				KEY_F12				KEY_PRINT			KEY_SCROLL_LOCK
   0,					0,					0,					0,					0,					0,					0,					0,
@@ -415,7 +415,7 @@ void NeoReportParser::OnKeyDown(uint8_t mod, uint8_t key) {
 				}
 			}
 		
-		}  else if(layer == L3 && key == KEY_TAB || key == KEY_RIGHT_BRACE || 
+		}  else if(layer == L3 && key == KEY_TAB || key == KEY_NON_US_NUM ||
 				key == KEY_TILDE || key == KEY_EQUAL){  //is compose key
 			composeState = true;
 			compose.transition(layer, key);
@@ -824,7 +824,7 @@ boolean NeoReportParser::neoModifierChange(uint8_t key, boolean isKeyDownEvent){
 			return true;
 			
 		case KEY_BACKSLASH:
-		case KEY_NON_US_NUM:
+		case KEY_QUOTE:
 			neoModifiers.bmRight3 = isKeyDownEvent;
 			return true;
 				
