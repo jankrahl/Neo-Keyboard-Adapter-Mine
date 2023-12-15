@@ -7,26 +7,29 @@ module case(){
             }
             // interior space cut out:
             union() {
-                //base
+                // base
                 translate([0,0,0]) {
                     cube([19,39,7], false);
                 }
-                //upper base
-                translate([2.5,-6.8,3]) {
+                // upper base
+                translate([0,8.2,4]) {
+                    cube([19,33,8], false);
+                }
+                // usb A
+                translate([2.5,-6.8,4]) {
                     cube([14,15,7], false);
                 }
-                //usb A
-                translate([0,8.2,3]) {
-                    cube([19,33,9], false);
-                }
-                //micro usb
-                translate([11/2,8.2+29,4]) {
+                // micro usb
+                translate([11/2,8.2+29,8.8]) {
                     cube([8,7,2.4], false);
                 }
             }
         }
     }
 }
+
+
+
 
 // bottom half (9mm height):
 translate([0, 0, 1]) { // translate back to ground level
@@ -40,18 +43,19 @@ translate([0, 0, 1]) { // translate back to ground level
                 cube([300, 300, 16], true);
             }
             // add hook 1 bottom
-            translate([19.5, -2, 9]) {
-                cube([19, 4, 2], true);
+            translate([19.5, -2, 9-0.05]) {
+                cube([19-0.2, 4-0.2, 2-0.1], true);
             }
             // add hook 2 bottom
-            translate([19.5, 43, 9]) {
-                cube([17, 4, 5], true);
+            translate([19.5, 43, 9-0.05]) {
+                cube([17-0.2, 4, 5-0.1], true);
             }
         }
 
 
     }
 }
+
 
 // bottom half (7mm height):
 translate([0, 0, -1]) { // translate back to ground level
