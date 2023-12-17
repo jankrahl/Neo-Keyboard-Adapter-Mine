@@ -379,6 +379,10 @@ void NeoReportParser::OnKeyDown(uint8_t mod, uint8_t key) {
 			case KEY_F12:
 				applyMap = !applyMap;
 				return;
+
+			case KEY_INSERT: case KEY_HOME: case KEY_PAGE_UP: case KEY_DELETE: case KEY_END: case KEY_PAGE_DOWN:
+				substitutePress(const_cast<InputSequence*>(neoMapL4), key);
+				return;
 				
 			default:
 				Keyboard.press(KeyboardKeycode(KEY_LEFT_GUI));
