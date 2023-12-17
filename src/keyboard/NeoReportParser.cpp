@@ -533,6 +533,13 @@ void NeoReportParser::OnKeyUp(uint8_t mod, uint8_t key) {
 		}
 	
 	} else { //act like a normal keyboard
+
+		// release media keys
+		if (activeConsumerSequence){<<w
+			Consumer.releaseAll();
+			activeSequence = {0,0};
+		}
+	  
 		Keyboard.release(KeyboardKeycode(key));
 	}
 	
